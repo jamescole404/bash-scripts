@@ -1,0 +1,36 @@
+Using SQL
+mssqluser swipe
+
+creating database
+	Create database <youdatabasename> 
+	Restor Database <your database name> from disk = '<backup file location + file name>'
+	
+to use a db
+	use databasename
+to run a query to SELECT BACKUP HISTORY on database called msdb, select the msdb database by excuting
+	exec use msdb
+	select * from backupset // this selects backup history.
+	
+to delete a database	
+	drop databasename // to do this in Management studio, right click on db and the delete command. 
+	
+to backup a db 
+	backup database <databasename> to disk = '<backup file location + file name>'
+	backup log <databasename> to disk = '<backup file location + filename>'
+	
+Permissions refer to the rules governing the levels of access that principals have to securables.
+you can grant, revoke and deny permissions in MS SQL Server
+	use databasename
+	grant <permission name> on <object name> to <username\principle>
+	query	
+		use testDB GO grant select on TestTable to TestUser
+		
+SQL Statements
+	SELECT * FROM table_name;
+	select column1, column2, ... FROM table_name;
+SQL select distinct statmment // only shows one of each value not copies.
+	select distinct column1, column2, ... FROM table_name;
+	select count(distinct Country) from Customers;
+	
+	
+	
